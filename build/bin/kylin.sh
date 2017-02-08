@@ -38,8 +38,8 @@ function retrieveDependency() {
         source ${dir}/setenv.sh
     fi
 
-    export HBASE_CLASSPATH_PREFIX=${KYLIN_HOME}/conf:${KYLIN_HOME}/lib/*:${KYLIN_HOME}/tool/*:${KYLIN_HOME}/ext/*:${HBASE_CLASSPATH_PREFIX}
-    export HBASE_CLASSPATH=${HBASE_CLASSPATH}:${hive_dependency}
+    export HBASE_CLASSPATH_PREFIX=${KYLIN_HOME}/conf:${KYLIN_HOME}/lib/*:${KYLIN_HOME}/ext/*:${HBASE_CLASSPATH_PREFIX}
+    export HBASE_CLASSPATH=${HBASE_CLASSPATH}:${hive_dependency}:${KYLIN_HOME}/tool/*
     if [ -n "$KAFKA_HOME" ]
     then
         source ${dir}/find-kafka-dependency.sh

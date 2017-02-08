@@ -54,6 +54,33 @@
             <artifactId>kylin-source-hive</artifactId>
         </dependency>
 
+        <!-- As KylinConfigCLI will be called before any dependency loaded, has to define the following as compile in tool -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
         <!--Env-->
         <dependency>
             <groupId>org.apache.hbase</groupId>
@@ -100,6 +127,12 @@
                                 <includes>
                                     <!-- shade the httpcore to avoid the lower version conflict with HBase one -->
                                     <include>org.apache.httpcomponents:httpcore</include>
+                                    <include>org.slf4j:slf4j-api</include>
+                                    <include>org.slf4j:slf4j-log4j12</include>
+                                    <include>log4j:log4j</include>
+                                    <include>commons-io:commons-io</include>
+                                    <include>commons-lang:commons-lang</include>
+                                    <include>com.google.guava:guava</include>
                                     <include>org.apache.kylin:kylin-tool</include>
                                 </includes>
                             </artifactSet>

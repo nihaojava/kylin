@@ -43,7 +43,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.calcite.avatica</groupId>
-            <artifactId>avatica</artifactId>
+            <artifactId>avatica-core</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -69,9 +69,7 @@
 
                             <artifactSet>
                                 <excludes>
-                                    <exclude>com.google.protobuf:*</exclude>
-                                    <exclude>commons-logging:*</exclude>
-                                    <exclude>commons-codec:*</exclude>
+                                    <exclude>org.slf4j:jcl-over-slf4j:*</exclude>
                                 </excludes>
                             </artifactSet>
 
@@ -85,8 +83,16 @@
                                     <shadedPattern>${shadeBase}.com.fasterxml.jackson</shadedPattern>
                                 </relocation>
                                 <relocation>
+                                    <pattern>com.google.protobuf</pattern>
+                                    <shadedPattern>${shadeBase}.com.google.protobuf</shadedPattern>
+                                </relocation>
+                                <relocation>
                                     <pattern>org.apache.http</pattern>
                                     <shadedPattern>${shadeBase}.org.apache.http</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache.commons</pattern>
+                                    <shadedPattern>${shadeBase}.org.apache.commons</shadedPattern>
                                 </relocation>
                             </relocations>
                             <filters>

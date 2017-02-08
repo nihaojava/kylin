@@ -70,6 +70,7 @@
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Hadoop dependency -->
